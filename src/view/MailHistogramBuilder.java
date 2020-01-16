@@ -6,10 +6,10 @@ import model.Mail;
 
 public class MailHistogramBuilder {
 
-    public static Histogram build(List<Mail> listMail) {
+    public static Histogram build(List<String> listMail) {
         Histogram<String> histogram = new Histogram();
-        for (Mail mail : listMail) {
-            histogram.increment(mail.getDomain());
+        for (String mail : listMail) {
+            histogram.increment(mail);
         }
         return histogram;
     }
